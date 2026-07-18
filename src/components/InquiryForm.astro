@@ -14,7 +14,7 @@ const isOpportunity = kind==='career'||kind==='contractor';
   <h2 id={`${kind}-form-heading`}>{config.heading}</h2>
   <p class="small">Fields marked <span aria-hidden="true">*</span><span class="sr-only">required</span> are required. Do not submit passwords, payment data, access codes, health information, government identifiers, or unrelated confidential records.</p>
   <form class="governed-form" method="post" action={config.action} data-form-kind={kind}>
-    <input type="hidden" name="startedAt" value={Date.now()} />
+    <input type="hidden" name="startedAt" value="__FORM_STARTED_AT__" />
     <div class="trap" aria-hidden="true"><label>Website <input name="website" tabindex="-1" autocomplete="off" /></label></div>
     <div class="field-grid">
       <label>Contact name <span aria-hidden="true">*</span><input name="contactName" autocomplete="name" required maxlength="120" /></label>
