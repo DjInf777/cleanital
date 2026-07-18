@@ -1,61 +1,74 @@
 # Repository Setup and Protection Record
 
 **Record ID:** CLN-WEB-REP-001  
-**Status:** Prepared; remote enforcement pending  
+**Status:** Active; public; protection verification pending  
 **Effective Date:** July 18, 2026  
 **Repository Owner:** `DjInf777`  
 **Repository Name:** `cleanital`  
-**Intended Visibility:** Public  
+**Approved Visibility:** Public  
 **Default Branch:** `main`
 
 ## 1. Canonical Repository
 
-The prepared local repository is the source package for:
+The canonical repository is:
 
 `DjInf777/cleanital`
 
-The GitHub-connected account currently has no repository matching Cleanital or the Cleanital website. Remote creation is therefore the remaining external account action.
+The repository is active on GitHub and is intentionally public by explicit Founder decision.
 
-## 2. Required Main-Branch Protection
+The earlier planned repository name `DjInf777/cleanital-website` is superseded and shall not be used in current instructions, records, remotes, or release metadata.
 
-Apply the following controls to `main`:
+## 2. Public Repository Doctrine
+
+Public visibility is approved because the repository is intended to contain public website source, public-facing content, governance instruments, and non-secret implementation controls.
+
+Public visibility does not authorize publication of:
+
+- Secrets, credentials, tokens, private keys, or recovery codes.
+- Production environment files.
+- Client, worker, applicant, contractor, or tenant records.
+- Private contracts, pricing, invoices, or operational evidence.
+- Database exports, backups, logs containing personal data, or private attachments.
+- Security-sensitive infrastructure details beyond what is safe and necessary for implementation.
+
+Before any new file class is introduced, the contributor shall determine whether it is appropriate for permanent public disclosure.
+
+## 3. Required Main-Branch Protection
+
+Apply and maintain the following controls on `main`:
 
 - Require a pull request before merging.
-- Required approving reviews: **0 while Edgar Henderson is the sole approver**.
+- Required approving reviews: **0 while Edgar Henderson is the sole qualified approver**.
 - Do not require Code Owner approval while only one eligible approver exists.
-- Require the `governance-integrity` status check.
+- Require the `governance-integrity` status check for affected changes.
 - Require conversation resolution.
 - Require linear history.
 - Apply protections to administrators.
 - Block force pushes.
 - Block branch deletion.
 - Allow squash merge as the default merge method.
-- Disable automatic branch deletion only if release or audit needs require preservation; otherwise deleting merged feature branches is permitted.
 
 The approval count shall become at least one when a second qualified approver is appointed.
 
-## 3. Repository Files Enforcing Ownership
+The Founder reports that the repository-control script has been run. Independent verification through GitHub settings or API remains required before branch protection is marked fully verified.
+
+## 4. Repository Files Enforcing Ownership
 
 - `.github/CODEOWNERS` assigns repository ownership to `@DjInf777`.
 - `.github/workflows/governance-integrity.yml` validates the ratified governance corpus.
 - `.github/pull_request_template.md` requires scope, risk, validation, and rollback disclosure.
 - `RATIFIED-SHA256SUMS.txt` detects unauthorized changes to the ratified instruments.
+- `.gitignore` excludes common secret, environment, backup, and production-export files.
 
-## 4. Plan Dependency
+## 5. Release Control
 
-GitHub branch protection for a private repository requires a GitHub plan that supports protected private branches.
+- Preserve `website-governance-v1.2.0` as historical ratification evidence.
+- Use `website-governance-v1.2.1` for the corrected repository and visibility records.
+- Do not force-move or overwrite the original tag.
+- Future tags must point to the exact approved release commit.
 
-If the connected account does not support this:
+## 6. Remote Publication Status
 
-- Upgrade to GitHub Pro or higher; or
-- Keep the repository local/private until protections can be enforced.
+Remote publication is complete.
 
-Do not make the repository public merely to obtain controls without first reviewing whether its complete contents are appropriate for public disclosure.
-
-## 5. Remote Publication
-
-Use the supplied `scripts/publish-repository.sh` from the repository root after installing and authenticating GitHub CLI.
-
-Then run `scripts/apply-github-controls.sh`.
-
-The scripts do not store credentials.
+The publication and control scripts now target `DjInf777/cleanital`. They remain available for verification, disaster recovery, or a clean repository re-bootstrap, but routine repository work shall proceed through protected branches and pull requests.
