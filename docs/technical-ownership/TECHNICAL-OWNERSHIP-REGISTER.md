@@ -15,7 +15,7 @@
 | Website Incident Owner | Edgar Henderson | Assigned initially |
 | Content approval authority | Edgar Henderson | Assigned initially |
 | GitHub account owner | `DjInf777` | Verified connected account |
-| Planned GitHub repository | `DjInf777/cleanital-website` | Prepared locally; remote creation pending |
+| Planned GitHub repository | `DjInf777/cleanital` | Prepared locally; remote creation pending |
 | Canonical public domain | `cleanital.com` | Governed and publicly active |
 | Production hosting | Hostinger | Approved current hosting platform |
 | DNS control target | Cloudflare | Approved control model; account implementation must be verified |

@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-REPO="DjInf777/cleanital-website"
+REPO="DjInf777/cleanital"
 
 if ! command -v gh >/dev/null 2>&1; then
   echo "GitHub CLI is required: https://cli.github.com/" >&2
@@ -12,8 +12,10 @@ gh auth status
 
 if gh repo view "$REPO" >/dev/null 2>&1; then
   echo "Repository $REPO already exists."
-  if ! git remote get-url origin >/dev/null 2>&1; then
-    git remote add origin "https://github.com/${REPO}.git"
+  if git remote get-url origin >/dev/null 2>&1; then
+    git remote set-url origin "git@github.com:${REPO}.git"
+  else
+    git remote add origin "git@github.com:${REPO}.git"
   fi
 else
   gh repo create "$REPO" \

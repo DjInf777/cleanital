@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-REPO="DjInf777/cleanital-website"
+REPO="DjInf777/cleanital"
 
 if ! command -v gh >/dev/null 2>&1; then
   echo "GitHub CLI is required: https://cli.github.com/" >&2

@@ -10,7 +10,7 @@
 **Disposition:** Approved and Effective  
 **Conditions:** None  
 **Release Tag:** `website-governance-v1.2.0`  
-**Canonical Repository:** `DjInf777/cleanital-website` once the prepared repository is published to GitHub  
+**Canonical Repository:** `DjInf777/cleanital` once the prepared repository is published to GitHub  
 **Canonical Path:** `/docs/website-governance/instruments/`  
 **Corpus Digest:** `4ed5dd8d75c42290d3a9f2fc0ab98a2ff244b130bcf8153197fdf7bdf1d75e59`  
 **Digest Method:** SHA-256 of `RATIFIED-SHA256SUMS.txt`

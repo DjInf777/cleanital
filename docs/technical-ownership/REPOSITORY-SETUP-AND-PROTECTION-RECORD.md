@@ -4,7 +4,7 @@
 **Status:** Prepared; remote enforcement pending  
 **Effective Date:** July 18, 2026  
 **Repository Owner:** `DjInf777`  
-**Repository Name:** `cleanital-website`  
+**Repository Name:** `cleanital`  
 **Intended Visibility:** Private  
 **Default Branch:** `main`
 
@@ -12,7 +12,7 @@
 
 The prepared local repository is the source package for:
 
-`DjInf777/cleanital-website`
+`DjInf777/cleanital`
 
 The GitHub-connected account currently has no repository matching Cleanital or the Cleanital website. Remote creation is therefore the remaining external account action.
 
