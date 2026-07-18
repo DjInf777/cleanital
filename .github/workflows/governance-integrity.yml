@@ -2,17 +2,9 @@ name: Governance Integrity
 
 on:
   pull_request:
-    paths:
-      - "docs/website-governance/**"
-      - "scripts/validate_governance.py"
-      - ".github/workflows/governance-integrity.yml"
   push:
     branches:
       - main
-    paths:
-      - "docs/website-governance/**"
-      - "scripts/validate_governance.py"
-      - ".github/workflows/governance-integrity.yml"
 
 permissions:
   contents: read

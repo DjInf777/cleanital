@@ -5,7 +5,7 @@
 **Effective Date:** July 18, 2026  
 **Repository Owner:** `DjInf777`  
 **Repository Name:** `cleanital`  
-**Intended Visibility:** Private  
+**Intended Visibility:** Public  
 **Default Branch:** `main`
 
 ## 1. Canonical Repository
