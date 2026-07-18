@@ -9,9 +9,12 @@
 **Canonical Public Domain:** `cleanital.com`  
 **Disposition:** Approved and Effective  
 **Conditions:** None  
-**Release Tag:** `website-governance-v1.2.0`  
-**Canonical Repository:** `DjInf777/cleanital` once the prepared repository is published to GitHub  
+**Original Ratification Tag:** `website-governance-v1.2.0`  
+**Administrative Correction Release:** `website-governance-v1.2.1`  
+**Canonical Repository:** `DjInf777/cleanital`  
+**Repository Visibility:** Public, by explicit Founder decision  
 **Canonical Path:** `/docs/website-governance/instruments/`  
+**Correction Record:** `CLN-WEB-COR-2026-001`  
 **Corpus Digest:** `4ed5dd8d75c42290d3a9f2fc0ab98a2ff244b130bcf8153197fdf7bdf1d75e59`  
 **Digest Method:** SHA-256 of `RATIFIED-SHA256SUMS.txt`
 
@@ -30,6 +33,19 @@ The ten files listed in `RATIFIED-SHA256SUMS.txt` are the complete ratified Phas
 
 A changed checksum means the affected instrument is no longer identical to the ratified release and must be handled through the applicable governance-change process.
 
+## Administrative Correction
+
+The original `website-governance-v1.2.0` tag is preserved as historical ratification evidence. It contains the former planned repository name `DjInf777/cleanital-website` in an administrative record.
+
+The Founder subsequently confirmed that:
+
+- The canonical repository is `DjInf777/cleanital`.
+- The repository is intentionally public.
+- The public visibility decision supersedes the earlier private-repository assumption.
+- The normative Phase 1.2 instruments and their corpus digest are unchanged.
+
+The corrected administrative release is `website-governance-v1.2.1`, governed by `CLN-WEB-COR-2026-001`.
+
 ## Supersession
 
 This ratification supersedes the unratified Phase 1.0, Phase 1.1, and pre-ratification Phase 1.2 packages as active implementation authority.
@@ -40,5 +56,5 @@ Those earlier packages may be retained only as historical working material and s
 
 **Name:** Edgar Henderson  
 **Approval Method:** Direct written instruction in the Cleanital Website project conversation  
-**Recorded By:** Cleanital website repository bootstrap  
+**Recorded By:** Cleanital website repository bootstrap and v1.2.1 administrative correction  
 **Recorded On:** July 18, 2026
