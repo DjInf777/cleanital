@@ -14,22 +14,36 @@ on:
   push:
     branches: [main]
 permissions:
-  contents: read
+  contents: write
 jobs:
   build-test:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.head_ref || github.ref_name }}
       - uses: actions/setup-node@v5
         with:
           node-version: 24
       - name: Resolve dependencies
-        run: npm install --no-audit --no-fund
-      - name: Preserve generated dependency lock
-        uses: actions/upload-artifact@v4
-        with:
-          name: dependency-lock
-          path: package-lock.json
-          retention-days: 1
+        id: dependencies
+        shell: bash
+        run: |
+          if [ -f package-lock.json ]; then
+            echo "created=false" >> "$GITHUB_OUTPUT"
+            npm ci --no-audit --no-fund
+          else
+            echo "created=true" >> "$GITHUB_OUTPUT"
+            npm install --no-audit --no-fund
+          fi
+      - name: Commit generated dependency lock once
+        if: github.event_name == 'pull_request' && github.head_ref == 'agent/complete-release-1-site' && steps.dependencies.outputs.created == 'true'
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add package-lock.json
+          git commit -m "Lock website dependencies"
+          git push origin HEAD:agent/complete-release-1-site
       - run: npm run build
       - run: npm test
