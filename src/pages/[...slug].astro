@@ -1,0 +1,13 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHero from '../components/PageHero.astro';
+import { generalPages } from '../data/site';
+export function getStaticPaths(){return generalPages.map(page=>({params:{slug:page.slug},props:{page}}));}
+const { page } = Astro.props;
+---
+<BaseLayout title={page.title} description={page.summary} path={`/${page.slug}/`} noindex={page.noindex ?? false}>
+  <PageHero eyebrow={page.eyebrow} title={page.title} summary={page.summary} showCta={!page.noindex}/>
+  {page.noindex && <div class="container"><p class="notice"><strong>Production gate:</strong> This implementation draft is intentionally no-index and may not be approved for production until the required external review is recorded.</p></div>}
+  <section class="section"><div class="container narrow content-stack">{page.sections.map(section=><section class="content-block"><h2>{section.title}</h2>{section.paragraphs?.map(p=><p>{p}</p>)}{section.bullets && <ul>{section.bullets.map(item=><li>{item}</li>)}</ul>}</section>)}</div></section>
+  {!page.noindex && <section class="cta-band"><div class="container"><h2>Is this a potential fit for your facility?</h2><a class="button" href="/request-an-assessment/">Request an Assessment</a></div></section>}
+</BaseLayout>

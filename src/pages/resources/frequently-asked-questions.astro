@@ -1,0 +1,4 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';import PageHero from '../../components/PageHero.astro';import { faqs } from '../../data/site';
+---
+<BaseLayout title="Frequently Asked Questions" description="Answers to common questions about Cleanital commercial cleaning services and the assessment process."><PageHero eyebrow="Before you request service" title="Frequently asked questions" summary="Clear answers about commercial focus, service areas, assessments, pricing, service distinctions, and responsibility boundaries."/><section class="section"><div class="container narrow content-stack">{faqs.map(([q,a])=><details class="content-block"><summary><strong>{q}</strong></summary><p>{a}</p></details>)}</div></section></BaseLayout>

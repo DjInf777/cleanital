@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+Disallow: /form-result/
+Sitemap: https://cleanital.com/sitemap.xml

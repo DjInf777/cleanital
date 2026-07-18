@@ -1,0 +1,21 @@
+[Unit]
+Description=Cleanital public website
+After=network.target
+
+[Service]
+Type=simple
+User=cleanital
+Group=cleanital
+WorkingDirectory=/opt/cleanital-website
+EnvironmentFile=/etc/cleanital-website.env
+ExecStart=/usr/bin/node /opt/cleanital-website/server/index.mjs
+Restart=on-failure
+RestartSec=5
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=true
+ReadWritePaths=/var/lib/cleanital-website/submissions
+
+[Install]
+WantedBy=multi-user.target

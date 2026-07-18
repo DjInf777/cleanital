@@ -1,0 +1,4 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';import PageHero from '../../components/PageHero.astro';import { industries } from '../../data/site';
+---
+<BaseLayout title="Industries" description="Explore how Cleanital approaches the operating needs of commercial facility types."><PageHero eyebrow="Facility context" title="Industries and facility needs" summary="The same cleaning method can have different operating requirements depending on the facility, occupants, schedule, access, and responsibilities."/><section class="section"><div class="container grid-3">{industries.map(i=><article class="card"><h2>{i.title}</h2><p>{i.summary}</p><a href={`/industries/${i.slug}/`}>Explore this facility context →</a></article>)}</div></section></BaseLayout>

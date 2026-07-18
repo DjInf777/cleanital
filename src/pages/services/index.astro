@@ -1,0 +1,4 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';import PageHero from '../../components/PageHero.astro';import { services } from '../../data/site';
+---
+<BaseLayout title="Commercial Cleaning Services" description="Explore Cleanital commercial janitorial, day porter, floor-care, post-construction, and project cleaning services."><PageHero eyebrow="Commercial services" title="Commercial cleaning services" summary="Cleanital evaluates the facility, scope, schedule, access, and responsibilities before proposing a service plan."/><section class="section"><div class="container grid-3">{services.map(s=><article class="card"><h2>{s.title}</h2><p>{s.summary}</p><a href={`/services/${s.slug}/`}>View service details →</a></article>)}</div></section></BaseLayout>
