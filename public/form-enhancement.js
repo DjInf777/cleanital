@@ -9,6 +9,13 @@
 
   for (const form of document.querySelectorAll('.governed-form')) {
     const status = form.querySelector('.form-status');
+    const startedAt = form.elements.namedItem('startedAt');
+    const markFormStart = () => {
+      if (startedAt instanceof HTMLInputElement) startedAt.value = String(Date.now());
+    };
+    markFormStart();
+    window.addEventListener('pageshow', markFormStart);
+
     form.addEventListener('submit', async (event) => {
       if (!window.fetch || !form.reportValidity()) return;
       event.preventDefault();
@@ -28,6 +35,7 @@
         status.classList.add('success');
         status.textContent = `Your request was received for review. Reference: ${data.reference}`;
         form.reset();
+        markFormStart();
       } catch (error) {
         status.classList.add('error');
         status.textContent = error instanceof Error ? error.message : 'We could not record your request. Please try once more.';
