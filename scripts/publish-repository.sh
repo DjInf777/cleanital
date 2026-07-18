@@ -19,7 +19,7 @@ if gh repo view "$REPO" >/dev/null 2>&1; then
   fi
 else
   gh repo create "$REPO" \
-    --private \
+    --public \
     --description "Canonical source for the Cleanital public website" \
     --source=. \
     --remote=origin
