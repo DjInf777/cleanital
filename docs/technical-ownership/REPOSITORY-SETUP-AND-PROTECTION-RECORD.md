@@ -1,7 +1,7 @@
 # Repository Setup and Protection Record
 
 **Record ID:** CLN-WEB-REP-001  
-**Status:** Prepared; remote enforcement pending  
+**Status:** Effective; remote enforcement applied  
 **Effective Date:** July 18, 2026  
 **Repository Owner:** `DjInf777`  
 **Repository Name:** `cleanital`  
@@ -14,7 +14,7 @@ The prepared local repository is the source package for:
 
 `DjInf777/cleanital`
 
-The GitHub-connected account currently has no repository matching Cleanital or the Cleanital website. Remote creation is therefore the remaining external account action.
+The repository is published at `DjInf777/cleanital` with the main-branch protection in Section 2 applied.
 
 ## 2. Required Main-Branch Protection
 
@@ -41,18 +41,7 @@ The approval count shall become at least one when a second qualified approver is
 - `.github/pull_request_template.md` requires scope, risk, validation, and rollback disclosure.
 - `RATIFIED-SHA256SUMS.txt` detects unauthorized changes to the ratified instruments.
 
-## 4. Plan Dependency
-
-GitHub branch protection for a private repository requires a GitHub plan that supports protected private branches.
-
-If the connected account does not support this:
-
-- Upgrade to GitHub Pro or higher; or
-- Keep the repository local/private until protections can be enforced.
-
-Do not make the repository public merely to obtain controls without first reviewing whether its complete contents are appropriate for public disclosure.
-
-## 5. Remote Publication
+## 4. Remote Publication
 
 Use the supplied `scripts/publish-repository.sh` from the repository root after installing and authenticating GitHub CLI.
 
