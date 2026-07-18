@@ -1,9 +1,11 @@
 # Release Candidate Build Validation Record
 
 **Record ID:** CLN-WEB-VAL-001  
-**Status:** Local source and intake validation passed; GitHub production build pending  
+**Status:** Passed for repository release candidate  
 **Date:** July 18, 2026  
-**Source Commit:** `b97e8f8b5f95a413076601b2ba653b00a6225fd6`
+**Validated Branch:** `agent/complete-release-1-site`  
+**Runtime:** Node.js 24 LTS  
+**Framework:** Astro 7.0.0
 
 ## Completed validation
 
@@ -15,9 +17,12 @@
 - Approved service and state-level territory identifiers were present.
 - Prohibited city-route and “near me” patterns were absent.
 - The primary `Request an Assessment` conversion and commercial-facility positioning were present.
+- GitHub Actions installed dependencies using Node 24.
+- GitHub Actions generated and committed `package-lock.json`.
+- The Astro production build completed successfully.
+- The form and release validation test suites completed successfully.
+- The ratified governance-integrity workflow completed successfully.
 
-## Environment limitation
+## Remaining validation boundary
 
-The local execution environment used for preparation did not have internet access and could not install Astro dependencies. The GitHub `Site CI` workflow is therefore the authoritative initial Astro 7 / Node 24 production-build validation for this branch.
-
-A generated and reviewed dependency lock file remains required before production deployment.
+This record validates the repository release candidate. It does not represent deployed Hostinger validation, legal approval, a manual WCAG conformance evaluation, provider-account verification, production form delivery, backup restoration, or Founder launch authorization. Those remain controlled by `EXTERNAL-LAUNCH-GATE-REGISTER.md`.
