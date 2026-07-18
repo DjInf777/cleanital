@@ -15,7 +15,7 @@
 | Website Incident Owner | Edgar Henderson | Assigned initially |
 | Content approval authority | Edgar Henderson | Assigned initially |
 | GitHub account owner | `DjInf777` | Verified connected account |
-| Planned GitHub repository | `DjInf777/cleanital` | Prepared locally; remote creation pending |
+| Canonical GitHub repository | `DjInf777/cleanital` | Active and intentionally public; admin ownership verified |
 | Canonical public domain | `cleanital.com` | Governed and publicly active |
 | Production hosting | Hostinger | Approved current hosting platform |
 | DNS control target | Cloudflare | Approved control model; account implementation must be verified |
@@ -23,7 +23,21 @@
 | Business email target | Google Workspace | Separate from website hosting; implementation must be verified |
 | Corp4ce | Secure operational and portal platform | Routes remain inactive until each destination passes its activation gate |
 
-## 2. Separation of Duties for a Solo Founder
+## 2. Public Repository Responsibility
+
+Because the canonical repository is public, every contributor shall treat every committed file and every Git history object as permanently discloseable.
+
+The repository shall not contain:
+
+- Secrets, passwords, tokens, private keys, or recovery codes.
+- Production `.env` files or unrestricted configuration exports.
+- Private client, worker, contractor, applicant, or tenant information.
+- Production database exports, backups, private logs, or attachments.
+- Private contracts, invoices, pricing records, or operational evidence.
+
+Accidental disclosure shall be treated as a website security incident. Deleting the visible file is not sufficient when the information remains in Git history; affected secrets must be revoked or rotated and the incident assessed.
+
+## 3. Separation of Duties for a Solo Founder
 
 Cleanital is currently permitted to consolidate ownership roles under Edgar Henderson.
 
@@ -36,7 +50,7 @@ The following controls remain separate even when one person performs them:
 - A failed launch blocker cannot be self-waived without a written Founder disposition.
 - Portal activation requires actual authentication and authorization testing.
 
-## 3. Delegation Rule
+## 4. Delegation Rule
 
 A future developer, designer, contractor, agency, or AI system receives only the access needed for the assigned work.
 
@@ -53,7 +67,7 @@ No outside party receives permanent ownership of:
 
 Delegation does not transfer Founder authority.
 
-## 4. Access Review
+## 5. Access Review
 
 The Technical Owner shall review access:
 
