@@ -1,0 +1,28 @@
+name: Site CI
+on:
+  pull_request:
+    paths:
+      - "src/**"
+      - "server/**"
+      - "scripts/**"
+      - "public/**"
+      - "ops/**"
+      - "package*.json"
+      - "astro.config.mjs"
+      - "Dockerfile"
+      - ".github/workflows/site-ci.yml"
+  push:
+    branches: [main]
+permissions:
+  contents: read
+jobs:
+  build-test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 24
+      - run: npm install --no-audit --no-fund
+      - run: npm run build
+      - run: npm test

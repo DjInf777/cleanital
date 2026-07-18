@@ -1,0 +1,7 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';import PageHero from '../../components/PageHero.astro';import { services } from '../../data/site';
+export function getStaticPaths(){return services.map(service=>({params:{slug:service.slug},props:{service}}));}
+const { service }=Astro.props;
+const related=services.filter(s=>(service.related as readonly string[]).includes(s.slug));
+---
+<BaseLayout title={service.title} description={service.summary} path={`/services/${service.slug}/`}><PageHero eyebrow={service.eyebrow} title={service.title} summary={service.summary}/><section class="section"><div class="container narrow"><p class="lede" style="color:var(--muted)">{service.description}</p><div class="content-stack">{service.sections.map(section=><section class="content-block"><h2>{section.title}</h2>{section.paragraphs?.map(p=><p>{p}</p>)}{section.bullets&&<ul>{section.bullets.map(item=><li>{item}</li>)}</ul>}</section>)}</div></div></section>{related.length>0&&<section class="section section-alt"><div class="container"><div class="section-heading"><p class="eyebrow">Related services</p><h2>Build the right service combination.</h2></div><div class="grid-3">{related.map(s=><article class="card"><h3>{s.title}</h3><p>{s.summary}</p><a href={`/services/${s.slug}/`}>Learn more →</a></article>)}</div></div></section>}<section class="cta-band"><div class="container"><h2>Request a facility and scope review.</h2><a class="button" href="/request-an-assessment/">Request an Assessment</a></div></section></BaseLayout>

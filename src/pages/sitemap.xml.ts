@@ -1,0 +1,31 @@
+export const prerender = true;
+const paths = [
+  "/",
+  "/services/",
+  "/industries/",
+  "/resources/",
+  "/resources/frequently-asked-questions/",
+  "/request-an-assessment/",
+  "/contact/",
+  "/careers/",
+  "/contractor-opportunities/",
+  "/about/",
+  "/how-we-work/",
+  "/quality-assurance/",
+  "/service-areas/",
+  "/services/recurring-commercial-janitorial-service/",
+  "/services/day-porter-service/",
+  "/services/office-cleaning/",
+  "/services/retail-cleaning/",
+  "/services/commercial-floor-care/",
+  "/services/commercial-floor-care/strip-and-wax/",
+  "/services/commercial-floor-care/scrub-and-recoat/",
+  "/services/post-construction-cleaning/",
+  "/services/project-cleaning/",
+  "/industries/daycare-and-early-education-facilities/",
+  "/industries/retail-facilities/",
+  "/industries/offices-and-professional-workplaces/",
+  "/industries/commercial-properties/",
+  "/industries/construction-and-post-construction-projects/"
+];
+export function GET(){const body=`<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">${paths.map(path=>`<url><loc>https://cleanital.com${path}</loc></url>`).join('')}</urlset>`;return new Response(body,{headers:{'Content-Type':'application/xml; charset=utf-8'}});}

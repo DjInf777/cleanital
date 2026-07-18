@@ -1,0 +1,19 @@
+{
+  "name": "cleanital-website",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "engines": { "node": ">=24 <25" },
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "start": "node server/index.mjs",
+    "test": "node scripts/test-forms.mjs && node scripts/validate-release.mjs",
+    "validate": "node scripts/validate-release.mjs",
+    "prune:forms": "node scripts/prune-form-submissions.mjs"
+  },
+  "dependencies": {
+    "astro": "7.0.0"
+  }
+}

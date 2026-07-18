@@ -1,0 +1,52 @@
+---
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import '../styles/global.css';
+import { site } from '../data/site';
+
+interface Props {
+  title: string;
+  description: string;
+  path?: string;
+  noindex?: boolean;
+  image?: string;
+}
+const { title, description, path = Astro.url.pathname, noindex = false, image = '/social-card.svg' } = Astro.props;
+const canonical = new URL(path, site.url).toString();
+const fullTitle = title === site.name ? title : `${title} | ${site.name}`;
+const organization = {
+  '@context':'https://schema.org',
+  '@type':'Organization',
+  name:site.name,
+  url:site.url,
+  description:site.description,
+  areaServed:[{'@type':'State','name':'North Carolina'},{'@type':'State','name':'South Carolina'}]
+};
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="theme-color" content="#0b2420" />
+    <meta name="description" content={description} />
+    <meta name="robots" content={noindex ? 'noindex,nofollow' : 'index,follow,max-image-preview:large'} />
+    <link rel="canonical" href={canonical} />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={fullTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={new URL(image, site.url).toString()} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <title>{fullTitle}</title>
+    <script type="application/ld+json" set:html={JSON.stringify(organization)}></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+    <Header />
+    <main id="main-content"><slot /></main>
+    <Footer />
+    <script src="/form-enhancement.js" defer></script>
+  </body>
+</html>
